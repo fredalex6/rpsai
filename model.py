@@ -1,4 +1,5 @@
 import torch.nn as nn
+from config import HISTORY_WINDOW
 
 
 class RPSNet(nn.Module):
@@ -6,7 +7,7 @@ class RPSNet(nn.Module):
         super().__init__()
 
         self.network = nn.Sequential(
-            nn.Linear(45, 16),
+            nn.Linear(9*HISTORY_WINDOW, 16),
             nn.ReLU(),
             nn.Linear(16, 8),
             nn.ReLU(),
