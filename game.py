@@ -15,6 +15,9 @@ def main():
     while True:
         play = input("Stein, saks eller papir? ").lower()
 
+        if play == "q":
+            raise KeyboardInterrupt
+            
         if play not in MOVE_NAMES:
             continue
 
