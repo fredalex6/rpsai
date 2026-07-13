@@ -1,22 +1,26 @@
 import tkinter as tk
-
-from game import main as start_game
-from config import FONT
+from game_gui import start_game
 
 
-def start_window():
+def start_menu():
     root = tk.Tk()
     root.title("RPS AI")
-    root.geometry("800x450")
+    root.geometry("500x350")
     root.configure(bg="white")
 
     # escape closes the window
     root.bind("<Escape>", lambda event: root.destroy())
 
+    def launch_game():
+        """Clear the start menu widgets and build the game screen"""
+        for widget in root.winfo_children():
+            widget.destroy()
+        start_game(root)
+
     title_label = tk.Label(
         root,
         text="RPS AI",
-        font=(FONT, 32, "bold"),
+        font=("Helvetica", 32, "bold"),
         bg="white",
     )
     title_label.pack(pady=(30, 5))
@@ -25,11 +29,10 @@ def start_window():
     underline = tk.Frame(root, bg="black", height=2, width=140)
     underline.pack(pady=(0, 20))
 
-
     description_label = tk.Label(
         root,
-        text="Spill 'Stein, saks, papir' mot et nevralt nett som prøve å predikere dine neste trekk",
-        font=(FONT, 12),
+        text="Beskrivelse her",
+        font=("Helvetica", 12),
         bg="white",
         fg="gray30",
         wraplength=400,
@@ -37,11 +40,10 @@ def start_window():
     )
     description_label.pack(pady=(0, 30))
 
-
     start_button = tk.Button(
         root,
         text="Start new game",
-        font=(FONT, 16, "bold"),
+        font=("Helvetica", 16, "bold"),
         bg="#2ecc71",
         fg="white",
         activebackground="#27ae60",
@@ -49,8 +51,12 @@ def start_window():
         borderwidth=3,
         padx=20,
         pady=10,
-        command=lambda: (root.destroy(), start_game()),
+        command=launch_game,
     )
-    start_button.pack(pady=25)
+    start_button.pack(pady=10)
 
     root.mainloop()
+
+
+if __name__ == "__main__":
+    start_menu()

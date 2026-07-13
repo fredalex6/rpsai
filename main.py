@@ -1,8 +1,4 @@
-from gui import start_window
+from start_gui import start_menu
 
 if __name__ == "__main__":
-    try:
-        start_window()
-    except KeyboardInterrupt:
-        print("\nAvslutter. Takk for spillet!")
-    
+    start_menu()
