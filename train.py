@@ -13,8 +13,7 @@ buffer_y = []
 
 
 def train(state, user_move):
-    """Store this round's (state, actual user move) example in a sliding-
-    window buffer, then retrain on the whole buffer for several epochs"""
+    """Store this round's (state, actual user move) in a sliding-window buffer"""
     buffer_X.append(state.squeeze(0))
     buffer_y.append(user_move)
 
