@@ -6,7 +6,7 @@ from rps_logic import result, counter, build_input
 from train import train, predict_user_move
 
 MOVE_NAMES_NO = {ROCK: "Stein", SCISSORS: "Saks", PAPIR: "Papir"}
-MOVE_EMOJIS = {ROCK: "🪨", SCISSORS: "✂️", PAPIR: "📄"}
+MOVE_EMOJIS = {ROCK: "🪨", SCISSORS: "✂", PAPIR: "📄"}
 
 RESULT_DELAY_MS = 1200
 
