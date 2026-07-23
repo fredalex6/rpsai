@@ -1,14 +1,14 @@
 import tkinter as tk
 import random as rd
 
-from config import ROCK, SCISSORS, PAPIR, HISTORY_WINDOW, RANDOM_ROUNDS
+from config import ROCK, SCISSORS, PAPIR, HISTORY_WINDOW, RANDOM_ROUNDS, GEOMETRY
 from rps_logic import result, counter, build_input
 from train import train, predict_user_move
 
 MOVE_NAMES_NO = {ROCK: "Stein", SCISSORS: "Saks", PAPIR: "Papir"}
 MOVE_EMOJIS = {ROCK: "🪨", SCISSORS: "✂️", PAPIR: "📄"}
 
-RESULT_DELAY_MS = 800
+RESULT_DELAY_MS = 1200
 
 WIN_COLOR = "#2ecc71"
 LOSS_COLOR = "#e74c3c"
@@ -21,7 +21,7 @@ class RPSGame:
     def __init__(self, root):
         self.root = root
         self.root.title("RPS AI")
-        self.root.geometry("500x400")
+        self.root.geometry(GEOMETRY)
 
         self.user_score = 0
         self.computer_score = 0
@@ -122,7 +122,7 @@ class RPSGame:
 
         moves_label = tk.Label(
             self.container,
-            text=f"Du {MOVE_EMOJIS[user_move]}      vs      {MOVE_EMOJIS[computer_move]} NN",
+            text=f"Du {MOVE_EMOJIS[user_move]}   vs   {MOVE_EMOJIS[computer_move]} NN",
             font=("Helvetica", 36),
             bg=bg_color,
         )

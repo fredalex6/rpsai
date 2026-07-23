@@ -24,4 +24,5 @@ LEARNING_RATE = 0.01
 
 # GUI greier
 
+GEOMETRY = "600x400"
 FONT = "Helvetica"

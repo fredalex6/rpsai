@@ -1,11 +1,12 @@
 import tkinter as tk
 from game_gui import start_game
+from config import GEOMETRY
 
 
 def start_menu():
     root = tk.Tk()
     root.title("RPS AI")
-    root.geometry("500x350")
+    root.geometry(GEOMETRY)
     root.configure(bg="white")
 
     # escape closes the window
