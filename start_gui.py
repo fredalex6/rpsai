@@ -32,7 +32,7 @@ def start_menu():
 
     description_label = tk.Label(
         root,
-        text="Beskrivelse her",
+        text="Spill stein, saks, papir mot et nevralt nettverk!",
         font=("Helvetica", 12),
         bg="white",
         fg="gray30",
